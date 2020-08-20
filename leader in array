@@ -1,0 +1,28 @@
+def leader(A):
+    b=[]
+    maxr=A[-1]
+    if(len(A)==1):
+        b.append(A[0])
+        return b
+    else:
+    
+        
+        b.append(maxr)
+        for i in range(len(A)-2,-1,-1):
+            #print(i)
+            if(A[i]>=maxr):
+                maxr=A[i]
+                b.append(A[i])
+        b.reverse()
+        return b
+    
+    
+    
+    
+T=int(input())
+for t in range(T):
+    n=int(input())
+    x=[int(x) for x in input().split()]
+    
+    z=leader(x)
+    print(" ".join(str(i) for i in z))
