@@ -1,0 +1,25 @@
+def zigzag(arr):
+    flag = True
+    for i in range(n-1): 
+        # "<" relation expected 
+        if flag is True: 
+            # If we have a situation like A > B > C, 
+            #   we get A > B < C  
+            # by swapping B and C 
+            if arr[i] > arr[i+1]: 
+                arr[i],arr[i+1] = arr[i+1],arr[i] 
+            # ">" relation expected 
+        else: 
+            # If we have a situation like A < B < C, 
+            #   we get A < C > B 
+            # by swapping B and C     
+            if arr[i] < arr[i+1]: 
+                arr[i],arr[i+1] = arr[i+1],arr[i] 
+        flag = bool(1 - flag) 
+    return arr 
+    
+
+T=int(input())
+for t in range(T):
+    n=int(input())
+    x=[int(x) for x in input().split()]
