@@ -1,0 +1,25 @@
+def minplatform(n,arr,dep):
+    platn=1
+    res=1
+    arr.sort()
+    dep.sort()
+    i=1
+    j=0
+    while(i<n and j<n):
+        if(arr[i]<=dep[j]):
+            i=i+1
+            platn=platn+1
+            if(platn>res):
+                res=platn
+        else:
+            j=j+1
+            platn=platn-1
+    return res
+    
+T=int(input())
+for t in range(T):
+    n=int(input())
+    arr=[int(x) for x in input().split()]
+    dep=[int(y) for y in input().split()]
+    m=minplatform(n,arr,dep)
+    print(m)
