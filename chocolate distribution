@@ -1,0 +1,23 @@
+def choc(n,c,m):
+    mindiff=123437373
+    if(n==0 or m==0):
+        return 0
+    elif(m>n):
+        return -1
+    else:
+        c.sort()
+        i=0
+        while(i+m-1<n):
+            if(c[i+m-1]-c[i]<=mindiff):
+                mindiff=c[i+m-1]-c[i]
+            i=i+1
+        return mindiff
+            
+
+T=int(input())
+for t in range(T):
+    n=int(input())
+    c=[int(x) for x in input().split()]
+    m=int(input())
+    ans=choc(n,c,m)
+    print(ans)
