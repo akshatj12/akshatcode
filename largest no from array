@@ -1,0 +1,20 @@
+def largen(x):
+    l=len(str(max(x)))+1
+    freq={}
+    for i in range(len(x)):
+        s=str(x[i])*l
+        
+        freq[i]=s[:l]
+    soted=sorted(freq.items(),key=lambda x:x[1],reverse=True)
+    d=[]
+    for m in soted:
+        d.append(str(x[m[0]]))
+    return d
+        
+
+t=int(input())
+for T in range(t):
+    n=int(input())
+    x=[int(x) for x in input().split()]
+    N=largen(x)
+    print("".join(x for x in N))
